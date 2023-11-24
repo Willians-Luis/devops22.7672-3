@@ -1,16 +1,26 @@
 pipeline {
-    agent any 
+    agent any
+    
     stages {
-        stage('Build') { 
+        stage('Checkout') {
             steps {
-                sh '''
-
-                docker info
-                java --version
-                docker --version
-                docker-compose --version
-                '''
+                git 'https://seu-repositorio.git'
             }
         }
+        
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        
+        stage('Run Tests') {
+            steps {
+                sh './node_modules/.bin/cypress run --config-file cypress.json'
+            }
+        }
+        
+        
     }
+    
 }
