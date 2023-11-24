@@ -2,11 +2,6 @@ pipeline {
     agent any
     
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/Willians-Luis/devops22.7672-3.git'
-            }
-        }
         
         stage('Install Dependencies') {
             steps {
