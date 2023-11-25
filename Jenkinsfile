@@ -2,12 +2,11 @@ pipeline {
     agent any
     
     stages {
-        stage('teste') {
+        stage('inicializacao') {
             steps {
                 sh '''
-                git --version
-                java --version
-                docker --version
+                docker-compose build
+                docker-compose up
                 '''
             }
         }
