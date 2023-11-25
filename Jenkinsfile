@@ -1,10 +1,6 @@
 pipeline {
-    agent {
-        docker {
-            image 'docker' // usa a imagem docker como agente
-            args '-v /var/run/docker.sock:/var/run/docker.sock' // monta o socket do docker no contêiner
-        }
-    }
+    agent any
+    
     stages {
         stage('Build') {
             steps {
