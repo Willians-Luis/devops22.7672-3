@@ -8,7 +8,6 @@ pipeline {
                 git --version
                 java --version
                 docker --version
-                docker-compose --version
                 '''
             }
         }
