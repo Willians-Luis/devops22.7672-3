@@ -3,13 +3,13 @@ pipeline {
 
     stages {
 
-        stage('Instalar dependências') {
+        stage('Instalar dependencias') {
             steps {
                 bat ' npm install'
             }
         }
 
-        stage('Run Tests') {
+        stage('Rodar testes') {
             steps {
                 bat 'npm test'
             }
