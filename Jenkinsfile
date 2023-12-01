@@ -2,12 +2,17 @@ pipeline {
     agent any
 
     stages {
-        
-        stage('Run') {
+
+        stage('Instalar dependências') {
             steps {
-                bat 'docker-compose up -d'
+                bat ' npm install'
             }
         }
-        
+
+        stage('Run Tests') {
+            steps {
+                bat 'npm test'
+            }
+        }
     }
 }
