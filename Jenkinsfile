@@ -12,6 +12,8 @@ pipeline {
         stage('Rodar testes') {
             steps {
                 bat 'npm test'
+                bat 'test:e2e'
+                bat 'test:ci'
             }
         }
     }
