@@ -5,8 +5,7 @@ pipeline {
         
         stage('Run') {
             steps {
-                sh 'npm --version' // executa os contêineres definidos no docker-compose
-            }
+                bat 'docker-compose up -d'
         }
         /*
         stage('Test') {
