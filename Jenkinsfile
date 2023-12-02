@@ -5,7 +5,13 @@ pipeline {
 
         stage('Instalar dependencias') {
             steps {
-                bat ' npm install'
+                bat 'npm install'
+            }
+        }
+
+        stage('iniciar aplicacao') {
+            steps {
+                bat 'docker-compose up -d'
             }
         }
 
